@@ -25,10 +25,23 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Story & CTAs */}
           <div className="lg:col-span-7 flex flex-col items-start space-y-6 sm:space-y-8 pr-0 lg:pr-8">
-            {/* Eyebrow badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAE0D0] text-[#526B4D] border border-[#526B4D]/15 text-xs sm:text-sm font-semibold tracking-wide uppercase">
-              <Sparkles className="w-3.5 h-3.5 text-[#C87958]" />
-              <span>{SITE_DATA.brand.heroEyebrow}</span>
+            {/* Eyebrow & Verified Google Rating */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EAE0D0] text-[#526B4D] border border-[#526B4D]/15 text-xs sm:text-sm font-semibold tracking-wide uppercase">
+                <Sparkles className="w-3.5 h-3.5 text-[#C87958]" />
+                <span>{SITE_DATA.brand.heroEyebrow}</span>
+              </div>
+
+              <a
+                href={SITE_DATA.googleReviews.googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#FAF6ED] text-[#38332D] border border-[#38332D]/15 text-xs font-medium hover:border-[#526B4D] transition-colors shadow-xs"
+              >
+                <span className="text-[#C87958]">★</span>
+                <span className="font-semibold text-[#526B4D]">4.9</span>
+                <span className="text-[#38332D]/70">(107 Google Reviews)</span>
+              </a>
             </div>
 
             {/* Headline */}
@@ -47,18 +60,18 @@ export default function Hero() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto pt-2">
               <Link
-                href="#food"
+                href="/menu"
                 className="inline-flex items-center justify-center gap-2.5 bg-[#526B4D] hover:bg-[#3F533B] text-[#FAF6ED] px-7 py-4 rounded-full text-base font-medium shadow-[0_4px_14px_rgba(82,107,77,0.25)] hover:shadow-[0_6px_20px_rgba(82,107,77,0.35)] hover:-translate-y-0.5 active:translate-y-0 transition-all text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#526B4D]"
               >
-                <span>Discover Our Kitchen</span>
+                <span>Discover Our Menu</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
               <Link
-                href="#story"
+                href="/find-us"
                 className="inline-flex items-center justify-center gap-2 bg-[#FAF6ED] hover:bg-[#EAE0D0]/60 text-[#38332D] border border-[#38332D]/20 hover:border-[#38332D]/40 px-7 py-4 rounded-full text-base font-medium transition-all text-center focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#526B4D]"
               >
-                <span>Meet Rupali&apos;s Kitchen</span>
+                <span>Find Our Kitchen</span>
               </Link>
             </div>
 
@@ -84,10 +97,11 @@ export default function Hero() {
               <div className="relative bg-[#FAF6ED] p-2.5 sm:p-3 rounded-2xl sm:rounded-[32px] shadow-[0_12px_40px_-8px_rgba(56,51,45,0.12)] border border-[#38332D]/10 overflow-hidden group">
                 <div className="relative aspect-[4/3.6] sm:aspect-square w-full overflow-hidden rounded-xl sm:rounded-[24px]">
                   <Image
-                    src={SITE_DATA.assets.thaliFeast}
-                    alt="Authentic Indian Thali feast with fresh rotis, rice, dal, sabzi, papad, and pickle prepared by Rupali's Kitchen"
+                    src={SITE_DATA.assets.palakPaneerThali}
+                    alt="Authentic Indian Thali feast with fresh chapatis, jeera rice, palak paneer, dal, bhindi masala, and raita prepared by Rupali's Kitchen"
                     fill
                     priority
+                    loading="eager"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 550px"
                     className="object-cover object-center group-hover:scale-[1.02] transition-transform duration-700 ease-out"
                   />

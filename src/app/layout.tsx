@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Lora, DM_Sans, Kalam } from "next/font/google";
+import { SITE_DATA, getRestaurantSchema } from "@/lib/site-data";
 import "./globals.css";
 
 const lora = Lora({
@@ -30,42 +31,48 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://rupaliskitchen.com"),
-  title: "Rupali's Kitchen | A Little Taste of Home",
-  description:
-    "Discover Rupali's Kitchen, a neighbourhood food spot for everyday Indian meals, nashta, and snacks.",
+  metadataBase: new URL(SITE_DATA.seo.baseUrl),
+  title: {
+    default: SITE_DATA.seo.defaultTitle,
+    template: SITE_DATA.seo.titleTemplate,
+  },
+  description: SITE_DATA.seo.defaultDescription,
   keywords: [
     "Rupali's Kitchen",
-    "Ghar ka khana",
-    "Indian meals",
-    "Homestyle thali",
-    "Nashta",
+    "Ghar ka khana Pune",
+    "Homestyle thali Ambegaon Budruk",
+    "Pure veg meals Pune",
+    "Daily tiffin service Ambegaon",
+    "Til bhakri thali",
+    "Student meals Katraj Ambegaon",
     "Everyday Indian food",
-    "Neighbourhood kitchen",
+    "Neighbourhood kitchen Pune",
   ],
   authors: [{ name: "Rupali's Kitchen" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Rupali's Kitchen | A Little Taste of Home",
-    description:
-      "Simple, comforting ghar ka khana, made with care. Everyday meals that bring a little comfort to your day.",
+    title: SITE_DATA.seo.defaultTitle,
+    description: SITE_DATA.seo.defaultDescription,
+    url: SITE_DATA.seo.baseUrl,
     type: "website",
     locale: "en_IN",
-    siteName: "Rupali's Kitchen",
+    siteName: SITE_DATA.brand.name,
     images: [
       {
-        url: "/images/rupalis-kitchen/thali-feast.png",
-        width: 1343,
-        height: 1171,
-        alt: "Authentic Indian Thali at Rupali's Kitchen",
+        url: SITE_DATA.seo.ogImage,
+        width: 1280,
+        height: 1084,
+        alt: "Authentic Homestyle Indian Thali at Rupali's Kitchen",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rupali's Kitchen | A Little Taste of Home",
-    description:
-      "Simple, comforting ghar ka khana, made with care. Everyday meals that bring a little comfort to your day.",
-    images: ["/images/rupalis-kitchen/thali-feast.png"],
+    title: SITE_DATA.seo.defaultTitle,
+    description: SITE_DATA.seo.defaultDescription,
+    images: [SITE_DATA.seo.ogImage],
   },
   icons: {
     icon: "/images/rupalis-kitchen/favicon-64.png",
@@ -78,33 +85,13 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    name: "Rupali's Kitchen",
-    description:
-      "Neighbourhood food business serving everyday Indian meals, homestyle thali, nashta, and snacks in Pune.",
-    image: "https://rupaliskitchen.com/images/rupalis-kitchen/thali-feast.png",
-    telephone: "+917841988070",
-    servesCuisine: ["Indian", "Homestyle", "Ghar ka Khana"],
-    priceRange: "₹",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress:
-        "02, Ambegaon Pathar Rd, opp. TORNA SANKUL, near CHINTAMANI PRIME ENGLISH SCH5, Tanaji Nagar",
-      addressLocality: "Ambegaon Budruk, Pune",
-      addressRegion: "Maharashtra",
-      postalCode: "411046",
-      addressCountry: "IN",
-    },
-    hasMap: "https://share.google/Hilc0OJ0Lsl5hYA0l",
-    url: "https://rupaliskitchen.com",
-  };
+  const jsonLd = getRestaurantSchema();
 
   return (
     <html
       lang="en"
       className={`${lora.variable} ${dmSans.variable} ${kalam.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
     >
       <head>
         <script

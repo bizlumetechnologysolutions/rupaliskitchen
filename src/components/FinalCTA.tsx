@@ -37,7 +37,7 @@ export default function FinalCTA() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            href="#find-us"
+            href="/find-us"
             className="inline-flex items-center justify-center gap-2.5 bg-[#FAF6ED] hover:bg-[#FAF6ED]/90 text-[#526B4D] px-8 py-4 rounded-full text-base font-semibold shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#FAF6ED]"
           >
             <span>{finalCta.buttonText}</span>

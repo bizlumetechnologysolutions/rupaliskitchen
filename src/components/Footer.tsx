@@ -25,13 +25,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pb-8 border-b border-[#38332D]/8">
           {/* Brand Info */}
           <div className="md:col-span-6 flex items-center gap-4">
-            <div className="relative w-12 h-12 flex-shrink-0 bg-[#EAE0D0]/60 rounded-xl p-1 border border-[#38332D]/10">
+            <div className="relative w-14 h-16 sm:w-16 sm:h-20 flex-shrink-0">
               <Image
-                src={SITE_DATA.assets.logoMark}
-                alt="Rupali's Kitchen pot mark"
+                src={SITE_DATA.assets.logoFull}
+                alt="Rupali's Kitchen Full Brand Logo"
                 fill
-                sizes="48px"
-                className="object-contain p-0.5"
+                sizes="80px"
+                className="object-contain"
               />
             </div>
             <div>

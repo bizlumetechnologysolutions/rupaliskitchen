@@ -40,10 +40,10 @@ export default function Navbar() {
   }, [isOpen]);
 
   const navLinks = [
-    { label: "Home", href: "#hero" },
-    { label: "Our Story", href: "#story" },
-    { label: "The Food", href: "#food" },
-    { label: "Find Us", href: "#find-us" },
+    { label: "Home", href: "/" },
+    { label: "Menu", href: "/menu" },
+    { label: "Our Story", href: "/story" },
+    { label: "Find Us", href: "/find-us" },
   ];
 
   return (
@@ -58,14 +58,14 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           {/* Brand Logo & Wordmark */}
           <Link
-            href="#hero"
+            href="/"
             className="flex items-center gap-3.5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#526B4D] rounded-lg p-1 transition-transform"
             aria-label="Rupali's Kitchen - Home"
           >
             <div className="relative w-11 h-11 sm:w-12 sm:h-12 flex-shrink-0 bg-[#EAE0D0]/50 rounded-xl p-1 border border-[#38332D]/10 group-hover:border-[#526B4D]/30 transition-colors">
               <Image
                 src={SITE_DATA.assets.logoMark}
-                alt="Rupali's Kitchen home pot icon"
+                alt="Rupali's Kitchen Logo"
                 fill
                 sizes="48px"
                 className="object-contain p-0.5 group-hover:scale-105 transition-transform duration-300"
@@ -98,10 +98,10 @@ export default function Navbar() {
             ))}
 
             <Link
-              href="#food"
+              href="/menu"
               className="inline-flex items-center gap-2 bg-[#526B4D] hover:bg-[#3F533B] text-[#FAF6ED] px-5 py-2.5 rounded-full text-sm font-medium transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#526B4D]"
             >
-              <span>Explore Our Kitchen</span>
+              <span>Explore Menu</span>
               <ArrowUpRight className="w-4 h-4 opacity-80" />
             </Link>
           </nav>
@@ -145,11 +145,11 @@ export default function Navbar() {
 
           <div className="pt-2">
             <Link
-              href="#food"
+              href="/menu"
               onClick={() => setIsOpen(false)}
               className="flex items-center justify-center gap-2 w-full bg-[#526B4D] hover:bg-[#3F533B] text-[#FAF6ED] py-3.5 px-6 rounded-xl font-medium text-base shadow-sm transition-colors text-center"
             >
-              <span>Explore Our Kitchen</span>
+              <span>Explore Menu</span>
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>

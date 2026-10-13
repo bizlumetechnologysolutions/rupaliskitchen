@@ -7,6 +7,7 @@ import CustomerMoment from "@/components/CustomerMoment";
 import FindUs from "@/components/FindUs";
 import FinalCTA from "@/components/FinalCTA";
 import Footer from "@/components/Footer";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 export default function Home() {
   return (
@@ -32,6 +33,9 @@ export default function Home() {
       </main>
 
       <Footer />
+
+      {/* Floating WhatsApp Action */}
+      <FloatingWhatsApp />
     </>
   );
 }
