@@ -22,9 +22,10 @@ export const metadata: Metadata = {
     url: `${SITE_DATA.seo.baseUrl}/menu`,
     images: [
       {
-        url: SITE_DATA.seo.ogImage,
-        width: 1672,
-        height: 941,
+        url: `${SITE_DATA.seo.baseUrl}/images/rupalis-kitchen/og.jpg`,
+        width: 1200,
+        height: 675,
+        type: "image/jpeg",
         alt: "Homestyle Food Menu at Rupali's Kitchen Pune",
       },
     ],

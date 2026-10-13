@@ -61,9 +61,10 @@ export const metadata: Metadata = {
     siteName: SITE_DATA.brand.name,
     images: [
       {
-        url: SITE_DATA.seo.ogImage,
-        width: 1672,
-        height: 941,
+        url: `${SITE_DATA.seo.baseUrl}/images/rupalis-kitchen/og.jpg`,
+        width: 1200,
+        height: 675,
+        type: "image/jpeg",
         alt: "Rupali's Kitchen — Pure Veg Homestyle Food in Ambegaon Budruk, Pune",
       },
     ],
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: SITE_DATA.seo.defaultTitle,
     description: SITE_DATA.seo.defaultDescription,
-    images: [SITE_DATA.seo.ogImage],
+    images: [`${SITE_DATA.seo.baseUrl}/images/rupalis-kitchen/og.jpg`],
   },
   icons: {
     icon: "/images/rupalis-kitchen/favicon-64.png",
