@@ -62,9 +62,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: SITE_DATA.seo.ogImage,
-        width: 1280,
-        height: 1084,
-        alt: "Authentic Homestyle Indian Thali at Rupali's Kitchen",
+        width: 1672,
+        height: 941,
+        alt: "Rupali's Kitchen — Pure Veg Homestyle Food in Ambegaon Budruk, Pune",
       },
     ],
   },

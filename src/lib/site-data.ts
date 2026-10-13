@@ -130,6 +130,7 @@ export const SITE_DATA = {
     vegetableMasalaMaggi: "/images/rupalis-kitchen/vegetable-masala-maggi.png",
     sabudanaKhichdi: "/images/rupalis-kitchen/sabudana-khichdi.png",
     whatsappIcon: "/images/rupalis-kitchen/whatsapp-icon.png",
+    ogImage: "/images/rupalis-kitchen/og.png",
   },
 
   story: {
@@ -288,7 +289,7 @@ export const SITE_DATA = {
     titleTemplate: "%s | Rupali's Kitchen Pune",
     defaultDescription:
       "Comforting, homemade Indian meals, authentic thalis, and daily tiffins in Ambegaon Budruk, Pune. Run with love by Rupali & Shankar.",
-    ogImage: "/images/rupalis-kitchen/palak-paneer-thali.jpeg",
+    ogImage: "/images/rupalis-kitchen/og.png",
   },
 
   localities: {

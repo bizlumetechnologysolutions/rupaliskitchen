@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: SITE_DATA.seo.ogImage,
-        width: 1280,
-        height: 1084,
+        width: 1672,
+        height: 941,
         alt: "Homestyle Food Menu at Rupali's Kitchen Pune",
       },
     ],
