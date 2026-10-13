@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
 import BrandBanner from "@/components/BrandBanner";
+import DailyMeals from "@/components/DailyMeals";
 import FoodGallery from "@/components/FoodGallery";
 import WhyUs from "@/components/WhyUs";
 import CustomerMoment from "@/components/CustomerMoment";
@@ -27,6 +28,7 @@ export default function Home() {
         <Hero />
         <Story />
         <BrandBanner />
+        <DailyMeals />
         <FoodGallery />
         <WhyUs />
         <CustomerMoment />

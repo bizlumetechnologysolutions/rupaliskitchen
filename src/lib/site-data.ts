@@ -24,6 +24,28 @@ export interface FoodItem {
   featured?: boolean;
 }
 
+export interface DailyMealPackage {
+  id: string;
+  name: string;
+  marathiName: string;
+  price: number;
+  priceDisplay: string;
+  formula: string;
+  breakdown: {
+    chapati: number;
+    sabji: number;
+    daal: boolean;
+    rice: boolean;
+  };
+  includes: string[];
+  shortDescription?: string;
+  description: string;
+  badge?: string;
+  isPopular?: boolean;
+  imageSrc: string;
+  whatsAppPrompt: string;
+}
+
 export interface CustomerReview {
   id: string;
   name: string;
@@ -143,12 +165,133 @@ export const SITE_DATA = {
     pullQuote: "A little kitchen with a whole lot of heart.",
   },
 
+  dailyMeals: [
+    {
+      id: "full-meal",
+      name: "Full Meal",
+      marathiName: "फुल जेवण",
+      price: 150,
+      priceDisplay: "₹150",
+      formula: "2 Chapati + 2 Sabji + Daal + Rice",
+      breakdown: {
+        chapati: 2,
+        sabji: 2,
+        daal: true,
+        rice: true,
+      },
+      includes: [
+        "2 Fresh Tawa Chapatis / Phulkas",
+        "2 Daily Homestyle Sabzis",
+        "Slow-Cooked Comforting Daal",
+        "Steamed Long-Grain Rice",
+      ],
+      shortDescription: "Our complete homestyle lunch & dinner thali.",
+      description:
+        "Our complete everyday homestyle thali. Freshly made hot chapatis straight from the tawa, paired with two comforting seasonal sabzis, tempered daal, and steamed rice.",
+      badge: "Most Wholesome • Full Thali",
+      isPopular: true,
+      imageSrc: "/images/rupalis-kitchen/rupalis-special-thali.jpeg",
+      whatsAppPrompt:
+        "Hello Rupali's Kitchen, I would like to order Full Meal (₹150: 2 Chapati + 2 Sabji + Daal + Rice). Is it available today?",
+    },
+    {
+      id: "mini-meal",
+      name: "Mini Meal",
+      marathiName: "मिनी जेवण",
+      price: 120,
+      priceDisplay: "₹120",
+      formula: "2 Chapati + 1 Sabji + Daal + Rice",
+      breakdown: {
+        chapati: 2,
+        sabji: 1,
+        daal: true,
+        rice: true,
+      },
+      includes: [
+        "2 Fresh Tawa Chapatis / Phulkas",
+        "1 Daily Homestyle Sabzi",
+        "Slow-Cooked Comforting Daal",
+        "Steamed Long-Grain Rice",
+      ],
+      shortDescription: "Light, balanced, and comforting everyday portion.",
+      description:
+        "The ideal balanced meal for everyday lunches and dinners. Two soft tawa chapatis, one generous serving of daily sabzi, slow-tempered daal, and steamed rice.",
+      badge: "Everyday Balanced",
+      isPopular: false,
+      imageSrc: "/images/rupalis-kitchen/palak-paneer-thali.jpeg",
+      whatsAppPrompt:
+        "Hello Rupali's Kitchen, I would like to order Mini Meal (₹120: 2 Chapati + 1 Sabji + Daal + Rice). Is it available today?",
+    },
+    {
+      id: "poli-bhaji",
+      name: "Poli Bhaji",
+      marathiName: "पोळी भाजी",
+      price: 80,
+      priceDisplay: "₹80",
+      formula: "2 Chapati + 1 Sabji",
+      breakdown: {
+        chapati: 2,
+        sabji: 1,
+        daal: false,
+        rice: false,
+      },
+      includes: [
+        "2 Hot Fresh Chapatis (Poli)",
+        "1 Daily Homestyle Sabzi",
+      ],
+      shortDescription: "Quick, simple, and honest Maharashtrian comfort.",
+      description:
+        "The beloved Maharashtrian everyday classic. Two soft, steaming hot chapatis made on the tawa served with a flavourful bowl of homestyle sabzi.",
+      badge: "Pocket-Friendly Classic",
+      isPopular: false,
+      imageSrc: "/images/rupalis-kitchen/chapati-paneer-bhurji.jpeg",
+      whatsAppPrompt:
+        "Hello Rupali's Kitchen, I would like to order Poli Bhaji (₹80: 2 Chapati + 1 Sabji). Is it available today?",
+    },
+  ] as DailyMealPackage[],
+
   foodGallery: {
     eyebrow: "FROM OUR KITCHEN",
     headline: "Roz ka khana. Roz ki khushi.",
     supportingText:
       "Freshly prepared everyday meals, authentic Maharashtrian & North Indian flavours, and the simple comfort of honest ghar ka khana.",
     items: [
+      {
+        id: "full-meal",
+        title: "Full Meal (2 Chapati + 2 Sabji + Daal + Rice)",
+        category: "Thalis & Meals",
+        description:
+          "Complete wholesome homestyle lunch & dinner thali: 2 fresh tawa chapatis, 2 daily changing sabzis, slow-tempered comforting daal, and steamed rice.",
+        imageSrc: "/images/rupalis-kitchen/rupalis-special-thali.jpeg",
+        priceDisplay: "₹150",
+        portionNote: "2 Chapati + 2 Sabji + Daal + Rice",
+        tags: ["Complete Thali", "Lunch & Dinner", "Everyday Best"],
+        featured: true,
+      },
+      {
+        id: "mini-meal",
+        title: "Mini Meal (2 Chapati + 1 Sabji + Daal + Rice)",
+        category: "Thalis & Meals",
+        description:
+          "Balanced homestyle daily portion: 2 soft tawa chapatis, 1 daily fresh homestyle sabzi, tempered yellow daal, and steamed rice.",
+        imageSrc: "/images/rupalis-kitchen/palak-paneer-thali.jpeg",
+        priceDisplay: "₹120",
+        portionNote: "2 Chapati + 1 Sabji + Daal + Rice",
+        tags: ["Everyday Balance", "Student Friendly"],
+        featured: true,
+      },
+      {
+        id: "poli-bhaji",
+        title: "Poli Bhaji (2 Chapati + 1 Sabji)",
+        category: "Thalis & Meals",
+        description:
+          "Traditional Maharashtrian everyday comfort: 2 hot soft chapatis (poli) straight from the tawa with 1 flavourful daily homestyle sabzi.",
+        imageSrc: "/images/rupalis-kitchen/chapati-paneer-bhurji.jpeg",
+        priceDisplay: "₹80",
+        portionNote: "2 Chapati + 1 Sabji",
+        tags: ["Quick Meal", "Pocket Friendly", "Classic"],
+        featured: true,
+      },
       {
         id: "rupalis-special-thali",
         title: "Rupali's Signature Special Thali",
@@ -398,11 +541,11 @@ export const SITE_DATA = {
       faq: [
         {
           q: "Do you serve students from Sinhgad Narhe campus?",
-          a: "Yes! Many Sinhgad Narhe students visit our counter for lunch, dinner, or pick up monthly meal tiffins.",
+          a: "Yes! Many Sinhgad Narhe students visit our counter for lunch, dinner, or pick up daily meal tiffins.",
         },
         {
-          q: "What vegetarian thalis are available?",
-          a: "We offer Rupali's Special Thali, Bhakri Special Thali, Executive Palak Paneer Thali, and everyday homestyle meal boxes.",
+          q: "What vegetarian thalis and daily meals are available?",
+          a: "We offer Full Meals (2 chapati + 2 sabji + daal + rice = ₹150/-), Mini Meals (2 chapati + 1 sabji + daal + rice = ₹120/-), Poli Bhaji (2 chapati + 1 sabji = ₹80/-), as well as Signature Special Thalis.",
         },
       ],
     } as LocalityInfo,
@@ -729,7 +872,7 @@ export function getRestaurantSchema() {
     logo: `${domain}/images/rupalis-kitchen/logo-full.png`,
     telephone: SITE_DATA.location.info.phoneNumber,
     servesCuisine: ["Indian", "Maharashtrian", "Pure Vegetarian", "Homestyle"],
-    priceRange: "₹100–₹300",
+    priceRange: "₹80–₹150",
     currenciesAccepted: "INR",
     paymentAccepted: "Cash, UPI",
     aggregateRating: {

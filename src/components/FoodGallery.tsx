@@ -137,7 +137,7 @@ export default function FoodGallery() {
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-[#526B4D] bg-[#526B4D]/10 px-3 py-1 rounded-full whitespace-nowrap hidden sm:inline-block">
-                  8 Hearty Meals
+                  {SITE_DATA.foodGallery.items.filter((item) => item.category === "Thalis & Meals").length} Hearty Meals
                 </span>
               </div>
 
@@ -190,6 +190,16 @@ export default function FoodGallery() {
                         </div>
 
                         <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-start">
+                          <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
+                              Pure Veg
+                            </span>
+                            {item.priceDisplay && (
+                              <span className="text-xs sm:text-sm font-bold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-full font-serif">
+                                {item.priceDisplay}/-
+                              </span>
+                            )}
+                          </div>
                           <h3 className="font-serif text-lg sm:text-xl font-normal text-[#38332D] mb-1.5 line-clamp-2 h-[3.25rem] sm:h-[3.5rem] flex items-start">
                             {item.title}
                           </h3>
@@ -669,6 +679,17 @@ export default function FoodGallery() {
 
             {/* Modal Content */}
             <div className="p-6 sm:p-8 space-y-4">
+              <div className="flex items-center justify-between gap-2 flex-wrap">
+                <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-md">
+                  100% Pure Veg Homestyle
+                </span>
+                {selectedDish.priceDisplay && (
+                  <span className="font-serif text-lg font-bold text-[#526B4D] bg-[#526B4D]/10 px-3 py-1 rounded-full">
+                    {selectedDish.priceDisplay}/-
+                  </span>
+                )}
+              </div>
+
               <h3
                 id="dish-modal-title"
                 className="font-serif text-2xl sm:text-3xl font-medium text-[#38332D]"

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { SITE_DATA, FoodItem } from "@/lib/site-data";
 import { analytics } from "@/lib/analytics";
+import DailyMeals from "@/components/DailyMeals";
 
 const CATEGORIES = [
   "All Dishes",
@@ -75,11 +76,18 @@ export default function MenuClient() {
 
   return (
     <div className="space-y-8 sm:space-y-10">
+      {/* Daily Meals Spotlight */}
+      {(selectedCategory === "All Dishes" || selectedCategory === "Thalis & Meals") && (
+        <div className="pb-4 sm:pb-6 border-b border-[#38332D]/10">
+          <DailyMeals compact={true} showHeading={true} className="!py-0 !bg-transparent" />
+        </div>
+      )}
+
       {/* Minimal Header & Share CTA */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#38332D]/10">
         <div>
           <h2 className="font-serif text-xl sm:text-2xl font-normal text-[#38332D]">
-            All Dishes
+            All Individual Dishes &amp; Special Thalis
           </h2>
           <p className="font-sans text-xs sm:text-sm text-[#38332D]/60 mt-0.5">
             Wholesome, pure-veg home food prepared fresh daily.
@@ -161,7 +169,7 @@ export default function MenuClient() {
                   </p>
                 </div>
                 <span className="text-xs font-semibold text-[#526B4D] bg-[#526B4D]/10 px-3 py-1 rounded-full whitespace-nowrap hidden sm:inline-block">
-                  8 Hearty Meals
+                  {foodGallery.items.filter((item) => item.category === "Thalis & Meals").length} Hearty Meals
                 </span>
               </div>
 
@@ -214,14 +222,21 @@ export default function MenuClient() {
                         </div>
 
                         <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-start">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
-                              <Leaf className="w-3 h-3 text-[#526B4D]" />
-                              Pure Veg
-                            </span>
-                            {item.portionNote && (
-                              <span className="text-[11px] text-[#38332D]/60 font-sans">
-                                • {item.portionNote}
+                          <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                            <div className="flex items-center gap-2">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
+                                <Leaf className="w-3 h-3 text-[#526B4D]" />
+                                Pure Veg
+                              </span>
+                              {item.portionNote && (
+                                <span className="text-[11px] text-[#38332D]/60 font-sans">
+                                  • {item.portionNote}
+                                </span>
+                              )}
+                            </div>
+                            {item.priceDisplay && (
+                              <span className="text-xs sm:text-sm font-bold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-full font-serif">
+                                {item.priceDisplay}/-
                               </span>
                             )}
                           </div>
@@ -338,14 +353,21 @@ export default function MenuClient() {
                         </div>
 
                         <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-start">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
-                              <Leaf className="w-3 h-3 text-[#526B4D]" />
-                              Pure Veg
-                            </span>
-                            {item.portionNote && (
-                              <span className="text-[11px] text-[#38332D]/60 font-sans">
-                                • {item.portionNote}
+                          <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                            <div className="flex items-center gap-2">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
+                                <Leaf className="w-3 h-3 text-[#526B4D]" />
+                                Pure Veg
+                              </span>
+                              {item.portionNote && (
+                                <span className="text-[11px] text-[#38332D]/60 font-sans">
+                                  • {item.portionNote}
+                                </span>
+                              )}
+                            </div>
+                            {item.priceDisplay && (
+                              <span className="text-xs sm:text-sm font-bold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-full font-serif">
+                                {item.priceDisplay}/-
                               </span>
                             )}
                           </div>
@@ -462,14 +484,21 @@ export default function MenuClient() {
                         </div>
 
                         <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-start">
-                          <div className="flex items-center gap-2 mb-1.5">
-                            <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
-                              <Leaf className="w-3 h-3 text-[#526B4D]" />
-                              Pure Veg
-                            </span>
-                            {item.portionNote && (
-                              <span className="text-[11px] text-[#38332D]/60 font-sans">
-                                • {item.portionNote}
+                          <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                            <div className="flex items-center gap-2">
+                              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
+                                <Leaf className="w-3 h-3 text-[#526B4D]" />
+                                Pure Veg
+                              </span>
+                              {item.portionNote && (
+                                <span className="text-[11px] text-[#38332D]/60 font-sans">
+                                  • {item.portionNote}
+                                </span>
+                              )}
+                            </div>
+                            {item.priceDisplay && (
+                              <span className="text-xs sm:text-sm font-bold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-full font-serif">
+                                {item.priceDisplay}/-
                               </span>
                             )}
                           </div>
@@ -575,14 +604,21 @@ export default function MenuClient() {
 
                   {/* Content */}
                   <div className="p-3.5 sm:p-4 flex-1 flex flex-col justify-start">
-                    <div className="flex items-center gap-2 mb-1.5">
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
-                        <Leaf className="w-3 h-3 text-[#526B4D]" />
-                        Pure Veg
-                      </span>
-                      {item.portionNote && (
-                        <span className="text-[11px] text-[#38332D]/60 font-sans">
-                          • {item.portionNote}
+                    <div className="flex items-center justify-between gap-2 mb-1.5 flex-wrap">
+                      <div className="flex items-center gap-2">
+                        <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2 py-0.5 rounded-md">
+                          <Leaf className="w-3 h-3 text-[#526B4D]" />
+                          Pure Veg
+                        </span>
+                        {item.portionNote && (
+                          <span className="text-[11px] text-[#38332D]/60 font-sans">
+                            • {item.portionNote}
+                          </span>
+                        )}
+                      </div>
+                      {item.priceDisplay && (
+                        <span className="text-xs sm:text-sm font-bold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-full font-serif">
+                          {item.priceDisplay}/-
                         </span>
                       )}
                     </div>
@@ -670,13 +706,20 @@ export default function MenuClient() {
             </div>
 
             <div className="p-6 sm:p-8 space-y-4">
-              <div className="flex items-center gap-2">
-                <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-md">
-                  <Leaf className="w-3.5 h-3.5 text-[#526B4D]" />
-                  100% Pure Veg Homestyle
-                </span>
-                {selectedDish.portionNote && (
-                  <span className="text-xs text-[#38332D]/60">• {selectedDish.portionNote}</span>
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="flex items-center gap-2">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold text-[#526B4D] bg-[#526B4D]/10 px-2.5 py-0.5 rounded-md">
+                    <Leaf className="w-3.5 h-3.5 text-[#526B4D]" />
+                    100% Pure Veg Homestyle
+                  </span>
+                  {selectedDish.portionNote && (
+                    <span className="text-xs text-[#38332D]/60">• {selectedDish.portionNote}</span>
+                  )}
+                </div>
+                {selectedDish.priceDisplay && (
+                  <span className="font-serif text-lg font-bold text-[#526B4D] bg-[#526B4D]/10 px-3 py-1 rounded-full">
+                    {selectedDish.priceDisplay}/-
+                  </span>
                 )}
               </div>
 

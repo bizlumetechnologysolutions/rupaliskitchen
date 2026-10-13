@@ -54,6 +54,7 @@ export default function MenuPage() {
       offers: {
         "@type": "Offer",
         priceCurrency: "INR",
+        ...(dish.priceDisplay ? { price: dish.priceDisplay.replace(/[^\d]/g, "") } : {}),
         availability: "https://schema.org/InStock",
       },
     })),
