@@ -16,6 +16,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import StoryShareWidget from "@/components/StoryShareWidget";
+import BrandBanner from "@/components/BrandBanner";
 
 export const metadata: Metadata = {
   title: "Our Story — Meet Rupali & Shankar",
@@ -143,6 +144,9 @@ export default function StoryPage() {
             </div>
           </div>
         </section>
+
+        {/* Brand Banner */}
+        <BrandBanner className="py-8 sm:py-12 bg-[#FAF6ED]" />
 
         {/* Our Values */}
         <section className="py-12 sm:py-16 bg-[#EAE0D0]/20 border-t border-[#38332D]/5">

@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Story from "@/components/Story";
+import BrandBanner from "@/components/BrandBanner";
 import FoodGallery from "@/components/FoodGallery";
 import WhyUs from "@/components/WhyUs";
 import CustomerMoment from "@/components/CustomerMoment";
@@ -25,6 +26,7 @@ export default function Home() {
       <main id="main-content" className="flex-1 flex flex-col">
         <Hero />
         <Story />
+        <BrandBanner />
         <FoodGallery />
         <WhyUs />
         <CustomerMoment />
