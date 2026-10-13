@@ -130,7 +130,7 @@ export const SITE_DATA = {
     vegetableMasalaMaggi: "/images/rupalis-kitchen/vegetable-masala-maggi.png",
     sabudanaKhichdi: "/images/rupalis-kitchen/sabudana-khichdi.png",
     whatsappIcon: "/images/rupalis-kitchen/whatsapp-icon.png",
-    ogImage: "/images/rupalis-kitchen/og.png",
+    ogImage: "/images/rupalis-kitchen/og.jpg",
   },
 
   story: {

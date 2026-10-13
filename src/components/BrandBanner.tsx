@@ -15,10 +15,11 @@ export default function BrandBanner({ className = "" }: BrandBannerProps) {
         <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-[#38332D]/10 shadow-[0_12px_40px_rgba(56,51,45,0.08)] bg-[#FAF6ED] group">
           <div className="relative aspect-[16/9] w-full bg-[#FAF6ED]">
             <Image
-              src="/images/rupalis-kitchen/og.png"
+              src="/images/rupalis-kitchen/og.jpg"
               alt="Rupali's Kitchen — A Little Taste of Home | Homemade • Heartfelt • Everyday"
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 95vw, 1200px"
+              priority
               className="object-cover object-center group-hover:scale-[1.01] transition-transform duration-700 ease-out"
             />
           </div>
